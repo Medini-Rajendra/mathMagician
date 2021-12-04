@@ -1,0 +1,87 @@
+.calculator {
+  /* Size and Position */
+  height: 80vh;
+  width: 50vh;
+  min-width: 300px;
+  min-height: 500px;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+
+  /* Design */
+  background: rgba(255, 255, 255, 0.25);
+  border: 0.1px solid white;
+  box-shadow: 0 0 20px black;
+}
+
+.calculator-display {
+  /* Size & position */
+  height: 100px;
+  padding: 0 10px;
+
+  /* Layout */
+  text-align: right;
+  font-size: 50px;
+  line-height: 100px;
+
+  /* Design */
+  background-color: darkgray;
+  color: white;
+  border: 1px solid black;
+}
+
+.calculator-buttons {
+  /* Size */
+  flex: 1;
+  margin: 0;
+
+  /* Layout */
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.calculator-button {
+  /* Size */
+  height: 100%;
+  width: 100%;
+
+  /* Layout */
+  text-align: center;
+
+  /* Design */
+  border: 0.5px solid rgb(105, 103, 103);
+  font-size: 30px;
+  background-color: white;
+}
+
+.calculator-number-button {
+  background-color: lightgray;
+}
+
+.calculator-equal-button {
+  background-color: lightsalmon;
+}
+
+.calculator-operation-button {
+  background-color: lightsalmon;
+}
+
+.calculator-operationdup-button {
+  background-color: lightgray;
+}
+
+.calculator-clear-button {
+  background-color: lightgray;
+}
+
+.span-two {
+  grid-row: 5;
+  grid-column: 4 / 5;
+}
+
+.zero-adjust {
+  grid-column-end: span 2;
+}
