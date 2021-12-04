@@ -31,8 +31,8 @@ class Calculator extends Component {
         <CalculatorDisplay output={number || result + operator} />
         <div className="calculator-buttons">
           <CalcButton value="AC" className="calculator-clear-button" />
-          <CalcButton value="+-" className="calculator-operation-button" onClick={this.handleNegateInput} />
-          <CalcButton value="%" className="calculator-operation-button" onClick="" disabled="true" />
+          <CalcButton value="+-" className="calculator-operationdup-button" onClick={this.handleNegateInput} />
+          <CalcButton value="%" className="calculator-operationdup-button" onClick="" disabled="true" />
           <CalcButton value="/" className="calculator-operation-button" onClick={this.handleOperatorInput} />
           <CalcButton value="7" className="calculator-number-button" onClick={this.handleNumberInput} />
           <CalcButton value="8" className="calculator-number-button" onClick={this.handleNumberInput} />
@@ -46,7 +46,7 @@ class Calculator extends Component {
           <CalcButton value="2" className="calculator-number-button" onClick={this.handleNumberInput} />
           <CalcButton value="3" className="calculator-number-button" onClick={this.handleNumberInput} />
           <CalcButton value="+" className="calculator-operation-button" onClick={this.handleOperatorInput} />
-          <CalcButton value="0" className="calculator-number-button" onClick={this.handleNumberInput} />
+          <CalcButton value="0" className="calculator-number-button zero-adjust" onClick={this.handleNumberInput} />
           <CalcButton value="." className="calculator-number-button" onClick={this.handleCommaInput} />
           <CalcButton value="=" className="calculator-equal-button span-two" onClick={this.handleEqualInput} />
         </div>

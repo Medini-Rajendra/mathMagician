@@ -4,17 +4,14 @@
   width: 50vh;
   min-width: 300px;
   min-height: 500px;
-  padding: 10px;
 
   /* Layout */
   display: flex;
   flex-direction: column;
-  gap: 10px;
 
   /* Design */
   background: rgba(255, 255, 255, 0.25);
-  border: 3px solid white;
-  border-radius: 15px;
+  border: 0px solid white;
   box-shadow: 0 0 20px black;
 }
 
@@ -29,9 +26,9 @@
   line-height: 100px;
 
   /* Design */
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid white;
-  border-radius: 10px;
+  background-color: darkgray;
+  color: white;
+  border: 1px solid black;
 }
 
 .calculator-buttons {
@@ -44,7 +41,6 @@
   justify-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 5px;
 }
 
 .calculator-button {
@@ -56,29 +52,36 @@
   text-align: center;
 
   /* Design */
-  border: 2px solid white;
-  border-radius: 15px;
+  border: 0.5px solid rgb(105, 103, 103);
   font-size: 30px;
   background-color: white;
 }
 
 .calculator-number-button {
-  background-color: lightskyblue;
+  background-color: lightgray;
 }
 
 .calculator-equal-button {
-  background-color: lightgreen;
+  background-color: lightsalmon;
 }
 
 .calculator-operation-button {
   background-color: lightsalmon;
 }
 
+.calculator-operationdup-button {
+  background-color: lightgray;
+}
+
 .calculator-clear-button {
-  background-color: lightcoral;
+  background-color: lightgray;
 }
 
 .span-two {
   grid-row: 5;
-  grid-column: 3 / 5;
+  grid-column: 4 / 5;
+}
+
+.zero-adjust {
+  grid-column-end: span 2;
 }
