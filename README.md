@@ -19,7 +19,7 @@ Additional description about the project and its features.
 
 ## Authors
 
-👤 **Author1**
+👤 **Rajendra Medini**
 
 - GitHub: [@githubhandle](https://github.com/Medini-Rajendra)
 - Twitter: [@twitterhandle](https://twitter.com/invenire512)
