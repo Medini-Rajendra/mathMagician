@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './calculator.css';
+import calculate from '../logic/calculate';
 
 const CalcButton = (prop) => {
-  const { value, className } = prop;
+  console.log(prop);
+  const { value, className, onClick } = prop;
   return (
-    <button type="button" value={value} className={`calculator-button ${className}`}>{value}</button>
+    <button type="button" value={value} onClick={onClick} className={`calculator-button ${className}`}>{value}</button>
   );
 };
 
@@ -18,37 +20,37 @@ class Calculator extends Component {
     super(props);
 
     this.state = {
-      result: '0',
-      number: '0',
-      operator: '',
+      total: '0',
+      next: '0',
+      operation: '',
     };
   }
 
   render() {
-    const { number, result, operator } = this.state;
+    const { next, total, operation } = this.state;
     return (
       <div className="calculator">
-        <CalculatorDisplay output={number || result + operator} />
+        <CalculatorDisplay output={next || total + operation} />
         <div className="calculator-buttons">
-          <CalcButton value="AC" className="calculator-clear-button" />
-          <CalcButton value="+-" className="calculator-operationdup-button" onClick={this.handleNegateInput} />
-          <CalcButton value="%" className="calculator-operationdup-button" onClick="" disabled="true" />
-          <CalcButton value="/" className="calculator-operation-button" onClick={this.handleOperatorInput} />
-          <CalcButton value="7" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="8" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="9" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="*" className="calculator-operation-button" onClick={this.handleOperatorInput} />
-          <CalcButton value="4" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="5" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="6" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="-" className="calculator-operation-button" onClick={this.handleOperatorInput} />
-          <CalcButton value="1" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="2" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="3" className="calculator-number-button" onClick={this.handleNumberInput} />
-          <CalcButton value="+" className="calculator-operation-button" onClick={this.handleOperatorInput} />
-          <CalcButton value="0" className="calculator-number-button zero-adjust" onClick={this.handleNumberInput} />
-          <CalcButton value="." className="calculator-number-button" onClick={this.handleCommaInput} />
-          <CalcButton value="=" className="calculator-equal-button span-two" onClick={this.handleEqualInput} />
+          <CalcButton value="AC" className="calculator-clear-button" onClick={calculate(this.state, 'AC')} />
+          <CalcButton value="+-" className="calculator-operationdup-button" onClick={calculate(this.state, '+-')} />
+          <CalcButton value="%" className="calculator-operationdup-button" onClick={calculate(this.state, '%')} />
+          <CalcButton value="/" className="calculator-operation-button" onClick={calculate(this.state, '/')} />
+          <CalcButton value="7" className="calculator-number-button" onClick={calculate(this.state, '7')} />
+          <CalcButton value="8" className="calculator-number-button" onClick={calculate(this.state, '8')} />
+          <CalcButton value="9" className="calculator-number-button" onClick={calculate(this.state, '9')} />
+          <CalcButton value="*" className="calculator-operation-button" onClick={calculate(this.state, '*')} />
+          <CalcButton value="4" className="calculator-number-button" onClick={calculate(this.state, '4')} />
+          <CalcButton value="5" className="calculator-number-button" onClick={calculate(this.state, '5')} />
+          <CalcButton value="6" className="calculator-number-button" onClick={calculate(this.state, '6')} />
+          <CalcButton value="-" className="calculator-operation-button" onClick={calculate(this.state, '-')} />
+          <CalcButton value="1" className="calculator-number-button" onClick={calculate(this.state, '1')} />
+          <CalcButton value="2" className="calculator-number-button" onClick={calculate(this.state, '2')} />
+          <CalcButton value="3" className="calculator-number-button" onClick={calculate(this.state, '3')} />
+          <CalcButton value="+" className="calculator-operation-button" onClick={calculate(this.state, '+')} />
+          <CalcButton value="0" className="calculator-number-button zero-adjust" onClick={calculate(this.state, '0')} />
+          <CalcButton value="." className="calculator-number-button" onClick={calculate(this.state, '.')} />
+          <CalcButton value="=" className="calculator-equal-button span-two" onClick={calculate(this.state, '=')} />
         </div>
       </div>
     );
